@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ผสมสีไม่รู้จบ</title>
+<meta name="theme-color" content="#2B2620">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@500;600&family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>ผสมสีไม่รู้จบ</h1>
+    <p class="sub">แตะสีจากคลังใส่ลงในช่องจานสี ผสมได้หลายสีพร้อมกัน ผสมได้เรื่อย ๆ ไม่มีที่สิ้นสุด</p>
+  </header>
+
+  <main>
+    <section class="mix-stage" aria-live="polite">
+      <div class="tray-head">
+        <h2>จานสี <span id="slotCount">3 ช่อง</span></h2>
+        <div class="tray-tools">
+          <button id="removeSlotBtn" class="tool-btn" aria-label="ลดช่อง">− ช่อง</button>
+          <button id="addSlotBtn" class="tool-btn" aria-label="เพิ่มช่อง">+ ช่อง</button>
+        </div>
+      </div>
+      <div class="slots-grid" id="slotsGrid"></div>
+      <p class="hint" id="hint" role="status"></p>
+
+      <div class="dish-wrap" id="dishWrap" hidden>
+        <div class="dish" id="dish"></div>
+        <p class="dish-caption" id="dishCaption">จานสี — ตัวอย่างก่อนผสม</p>
+      </div>
+
+      <button id="mixBtn" class="mix-btn" disabled>ผสมสี</button>
+    </section>
+
+    <section class="result" id="resultCard" hidden>
+      <div class="result-swatch" id="resultSwatch"></div>
+      <div class="result-text">
+        <p class="result-tag">สีใหม่ที่ได้</p>
+        <h2 id="resultName"></h2>
+        <p class="result-hex" id="resultHex"></p>
+      </div>
+    </section>
+
+    <section class="palette-wrap">
+      <div class="palette-head">
+        <h2>คลังสี</h2>
+        <span id="countBadge">4 สี</span>
+      </div>
+      <div class="palette" id="palette"></div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <button id="resetBtn" class="ghost-btn">เริ่มใหม่</button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
