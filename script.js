@@ -338,6 +338,21 @@ document.getElementById('removeSlotBtn').addEventListener('click', removeSlot);
 
 init();
 
+// ---------- หน้าเปิดแอป: แสดงประมาณ 3 วินาทีแล้วเข้าหน้าแอป (แตะเพื่อข้ามได้) ----------
+(function () {
+  const splash = document.getElementById('splash');
+  if (!splash) return;
+  let done = false;
+  function closeSplash() {
+    if (done) return;
+    done = true;
+    splash.classList.add('hide');
+    setTimeout(() => splash.remove(), 550);
+  }
+  setTimeout(closeSplash, 3000);
+  splash.addEventListener('click', closeSplash);
+})();
+
 // ---------- PWA: ลงทะเบียน service worker ----------
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
